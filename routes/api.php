@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +11,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'v1'], function () {
+
+    Route::get('customers', 'Api\CustomerController@index');
+
+    Route::get('customers/{id}', 'Api\CustomerController@show');
+
+    Route::match(['PUT', 'PATCH'],'customers/{id}', 'Api\CustomerController@update');
 });
