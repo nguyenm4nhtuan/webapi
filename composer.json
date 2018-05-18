@@ -50,6 +50,11 @@
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover"
+        ],
+
+        "re-setup-project": [
+            "@php composer.phar run-script post-root-package-install",
+            "@php composer.phar run-script post-create-project-cmd"
         ]
     },
     "config": {

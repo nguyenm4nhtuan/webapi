@@ -8,11 +8,12 @@ Server Requirements :
  
 Install: 
  - Config project on web server : 
-   - Recommend use Laravel Homestead virtual machine or virtual host 
+   - Recommend use Laravel Homestead virtual machine or virtual host
   
  - Go to root directory and run command:
  - Install php packages: 
-    php composer.phar install
+    - php composer.phar install
+    - php composer.phar run-script re-setup-project
  - Config connect database in file .env
  - Install database:
     php artisan migrate
